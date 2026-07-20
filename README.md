@@ -27,9 +27,7 @@ or the vorticity formulation
 
 $$
     \omega + \big((\lambda+1) y + U\big)\cdot \nabla \omega = \Phi
-$$
 
-$$
     (2 + \partial_1 U_1) \Phi + \left[(\lambda+1) y + U\right]\cdot \nabla \Phi = -\partial_1 U_2 \Psi
 $$
 
