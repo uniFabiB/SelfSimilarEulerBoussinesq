@@ -41,7 +41,9 @@ $$
     \nabla \cdot U = 0
 $$
 where $\Phi(y)=\partial_{y_1}\rho(y)$, $\Psi(y)=\partial_{y_2} \rho(y)$, and $\omega =\nabla^\perp_y \cdot U$
+
 and for Burgers' equation one gets
+
 $$
 \begin{aligned}
     -\lambda U + ((1+\lambda) y + U) U_y = 0
