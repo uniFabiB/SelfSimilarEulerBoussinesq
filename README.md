@@ -58,7 +58,7 @@ Burgers' equation becomes
 
 $$
 \begin{aligned}
-    -\lambda U + ((1+\lambda) y + U) U_y = 0
+    -\lambda U + ((1+\lambda) y + U) U_y = 0.
 \end{aligned}
 $$
 
