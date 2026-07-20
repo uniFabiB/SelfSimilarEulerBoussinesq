@@ -1,3 +1,13 @@
+# Table of Contents
+
+
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+  - [Chebfun bug](#chebfun-bug)
+  - [Burgers equation](#burgers-equation)
+  - [Boussinesq equations](#boussinesq-equations)
+
 # Description
 
 This a repo for Matlab/[Chebfun](https://www.chebfun.org/) to solve the question of self-similar blow-up for the 3d axisymmetric Euler equations or (almost, see Majda, Bertozzi - Vorticity and incompressible flow 5.4.1) equivalently the 2d Boussinesq Equations.
