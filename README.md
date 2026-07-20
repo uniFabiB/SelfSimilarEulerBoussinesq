@@ -94,7 +94,10 @@ end
 ```
 
 ### Burgers
-`odd_newton_insert.m` should run directly and give the corresponding self-similar solutions
+`odd_newton_insert.m` should run directly and give the corresponding self-similar solutions.
+
+It uses a damped Newton's method, which is implemented in `+fb/calcDampedStepSizeAndDirection.m`.
+
 To use deflated Newton (=avoid/penalize specific solutions) use change initialParams
 - `initialParams = initialParamsFor05;` for normal Newton's method, which yields the $\lambda=0.5$ solution
 - `initialParams = initialParamsFor025;` avoids the $\lambda=0.5$ solution and therefore gives the next $\lambda=0.25$
