@@ -13,13 +13,9 @@ For the Boussinesq equations one gets velocity formulation
 
 $$
     -\lambda U + \left[(\lambda+1) y + U\right]\cdot \nabla U + \nabla P = \rho e_2
-$$
 
-$$
     (1-\lambda) \rho + \left[(\lambda+1) y + U\right]\cdot \nabla \rho = 0
-$$
 
-$$
     \nabla \cdot U = 0
 $$
 
@@ -29,13 +25,9 @@ $$
     \omega + \big((\lambda+1) y + U\big)\cdot \nabla \omega = \Phi
 
     (2 + \partial_1 U_1) \Phi + \left[(\lambda+1) y + U\right]\cdot \nabla \Phi = -\partial_1 U_2 \Psi
-$$
 
-$$
     (2+ \partial_2 U_2 ) \Psi + \left[(\lambda+1) y + U\right]\cdot \nabla \Psi = - \partial_2 U_1 \Phi
-$$
 
-$$
     \nabla \cdot U = 0
 $$
 
