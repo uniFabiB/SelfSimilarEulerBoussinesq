@@ -1,0 +1,43 @@
+periodic not working in chebop2
+	neither in 1 or both directions
+	chebcoeffs2 is not working
+	https://github.com/chebfun/chebfun/issues/2330
+
+N.bc for chebop2
+	see .matlab/chebfun/@chebop2/set.m
+	simply treats it as a single value or single 1d function
+		N.lbc = N.bc restricted to domain l
+		N.rbc = N.lbc
+		N.ubc = N.bc restricted to domain u
+		N.dbc = N.ubc
+	so
+		N.bc = 0; works
+	and
+		N.bc = @(x) sin(pi*x); works
+	but can not do different ones for different directions since always the same value is assign
+
+N.bc for chebop
+	see .matlab/chebfun/@chebop/chebop.m	~line 539
+	parses as a function handle
+		therefore N.bc = @(x,u) [u(left)-2*u(right), u(right)-1]; works
+	if everything is linear
+		solvebvpLinear in linearize.m 	line 324
+			adds the bc to a BC constraint linear operator L "% quite differently from N.LBC and N.RBC"
+	if something is nonlinear
+		wrap the linear solve in a damped newton
+
+
+chebfun2 creation
+	see .matlab/chebfun/@chebfun2/constructor
+	relatively independent of trigx or not
+		get grid points
+			start with a n*n grid
+			gauß elimination with complete pivoting
+				(or rather the continuous analogue completeACA = Adaptive Cross Approximation with complete pivoting)
+				for grid point values and increase n until error < tol
+			this gives slices of points
+		get function on slices
+			gauß eliminiation on chebyshev coefficients until error < machine precision
+		difference trigx or not
+			trig uses fourier-based trigfuns instead of chebyshev polynomials for that direction
+	

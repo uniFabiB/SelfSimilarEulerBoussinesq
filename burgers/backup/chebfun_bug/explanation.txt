@@ -1,0 +1,86 @@
+previously got the error
+	Unable to perform assignment
+	because value of type 'chebfun'
+	is not convertible to 'double'.
+
+	Error in blockFunction/mult/mytimesORIGINAL (line 148)
+		                z(:,k) = times(f, z(:,k));
+		                ^^^^^^
+	Error in blockFunction/mult/mytimes (line 137)
+		        out = mytimesORIGINAL(f, z);
+		              ^^^^^^^^^^^^^^^^^^^^^
+	Error in blockFunction>@(z)mytimes(f,z) (line 134)
+		    F = blockFunction( @(z) mytimes(f, z) );
+		                            ^^^^^^^^^^^^^
+	Error in blockFunction>@(z)A.func(B.func(z)) (line 123)
+		        C = blockFunction( @(z) A.func(B.func(z)) );
+		                                ^^^^^^^^^^^^^^^^^
+	Error in blockFunction>@(z)A.func(z)+B.func(z) (line 160)
+		    C = blockFunction( @(z) A.func(z) + B.func(z) );
+		                            ^^^^^^^^^
+	Error in blockFunction>@(z)A.func(z)+B.func(z) (line 160)
+		    C = blockFunction( @(z) A.func(z) + B.func(z) );
+		                            ^^^^^^^^^
+	Error in blockFunction>@(z)A.func(z)+B.func(z) (line 160)
+		    C = blockFunction( @(z) A.func(z) + B.func(z) );
+		                            ^^^^^^^^^
+	Error in  *  (line 124)
+		        C = C(B);
+		            ^^^^
+	Error in  *  (line 45)
+		    u = Adata{i,1} * Bdata{1,j};
+		                   ^
+	Error in chebop.solvebvpLinear (line 54)
+	normRes = norm(L*u - rhs, 'fro');
+		        ^
+	Error in chebop/solvebvp (line 208)
+	    [u, info] = N.solvebvpLinear(L, rhs, N.init, pref, displayInfo);
+		        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	Error in  \  (line 56)
+	    [varargout{1:nargout}] = solvebvp(N, rhs, varargin{:});
+		                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	Error in newton_insert (line 56)
+	    u = N\0;
+		 ^
+	Caused by:
+	    Error using double
+	    Conversion to double from
+	    chebfun is not possible.
+
+So I changed
+	in
+		/home/fb/.matlab/chebfun/@blockFunction/
+	the code
+		    function out = mytimes(f, z)
+			% Allow scalar expansion.
+			if ( size(f, 2) == 1 )
+			    for k = 1:size(z, 2)
+				z(:,k) = times(f, z(:,k));
+			    end
+			    out = z;
+			else
+			    out = times(f, z);
+			end
+		    end
+	to
+		    function out = mytimes(f, z)
+		        out = mytimesBUGFIX(f, z);
+		    end
+
+		    function out = mytimesBUGFIX(f, z)
+		        out = times(f, z);
+		    end
+
+		    function out = mytimesORIGINAL(f, z)
+		        % Allow scalar expansion.
+		        if ( size(f, 2) == 1 )
+		            for k = 1:size(z, 2)
+		                z(:,k) = times(f, z(:,k));
+		            end
+		            out = z;
+		        else
+		            out = times(f, z);
+		        end
+		    end
+		    
+this seems to resolve the issue
