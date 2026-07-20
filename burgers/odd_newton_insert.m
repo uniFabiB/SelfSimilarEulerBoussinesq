@@ -42,7 +42,7 @@ initialParamsFor01666 = struct('deflatedUs',u025, ...
     % 1 min runtime for <1e-12
 
 
-initialParams = initialParamsFor01666;
+initialParams = initialParamsFor05;
 
 deflatedLambdas = initialParams.deflatedLambdas;
 deflatedUs = initialParams.deflatedUs;

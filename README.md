@@ -54,6 +54,48 @@ $$
 
 ## Usage
 
+### Chebfun bug
+There was a bug in Chebfun.
+So `~/.matlab/chebfun/@blockFunction/blockFunction.m` needs to be changed like from
+```
+function out = mytimes(f, z)
+    % Allow scalar expansion.
+    if ( size(f, 2) == 1 )
+        for k = 1:size(z, 2)
+	    z(:,k) = times(f, z(:,k));
+        end
+        out = z;
+    else
+        out = times(f, z);
+    end
+end
+```
+to
+```
+function out = mytimes(f, z)
+    out = mytimesBUGFIX(f, z);
+end
+
+function out = mytimesBUGFIX(f, z)
+    out = times(f, z);
+end
+
+function out = mytimesORIGINAL(f, z)
+    % Allow scalar expansion.
+    if ( size(f, 2) == 1 )
+        for k = 1:size(z, 2)
+            z(:,k) = times(f, z(:,k));
+        end
+        out = z;
+    else
+        out = times(f, z);
+    end
+end
+```
+
 ### Burgers
-
-
+`odd_newton_insert.m` should run directly and give the corresponding self-similar solutions
+To use deflated Newton (=avoid/penalize specific solutions) use change initialParams
+- `initialParams = initialParamsFor05;` for normal Newton's method, which yields the $\lambda=0.5$ solution
+- `initialParams = initialParamsFor025;` avoids the $\lambda=0.5$ solution and therefore gives the next $\lambda=0.25$
+- ...
