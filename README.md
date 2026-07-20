@@ -10,9 +10,11 @@ The idea behind self-similar blow-up is to look for solutions of the form
 $$u(x, t) = (1 - t)^\lambda  U\left(\frac{x}{(1 - t)^{\lambda+1}} \right)=(1-t)^\lambda U(y).$$
 
 For the Boussinesq equations one gets velocity formulation
+
 $$
     -\lambda U + \left[(\lambda+1) y + U\right]\cdot \nabla U + \nabla P = \rho e_2
 $$
+
 $$
     (1-\lambda) \rho + \left[(\lambda+1) y + U\right]\cdot \nabla \rho = 0
     \\
