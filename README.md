@@ -3,7 +3,7 @@
 This a repo for Matlab/[Chebfun](https://www.chebfun.org/) to solve the question of self-similar blow-up for the 3d axisymmetric Euler equations or (almost, see Majda, Bertozzi - Vorticity and incompressible flow 5.4.1) equivalently the 2d Boussinesq Equations.
 As a proof of concept, the 1d Burgers' equation is solved with an implementation of a damped Newton's method that can use deflation techniques to get different self-similarity exponents ($\lambda$ in the following).
 
-For more mathematical background see Wang, Lai, G\'omez-Serrano, Buckmaster 2023 ([Journal](https://doi.org/10.1103/PhysRevLett.130.244002), [arXiv](https://arxiv.org/abs/2201.06780))
+For more mathematical background see Wang, Lai, Gómez-Serrano, Buckmaster 2023 ([Journal](https://doi.org/10.1103/PhysRevLett.130.244002), [arXiv](https://arxiv.org/abs/2201.06780))
 
 The idea behind self-similar blow-up is to look for solutions of the form
 
