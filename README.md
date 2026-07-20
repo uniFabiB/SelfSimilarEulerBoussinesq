@@ -93,7 +93,7 @@ function out = mytimesORIGINAL(f, z)
 end
 ```
 
-### Burgers
+### Burgers equation
 `odd_newton_insert.m` should run directly and give the corresponding self-similar solutions.
 
 It uses a damped Newton's method, which is implemented in `+fb/calcDampedStepSizeAndDirection.m`.
@@ -102,3 +102,6 @@ To use deflated Newton (=avoid/penalize specific solutions) use change initialPa
 - `initialParams = initialParamsFor05;` for normal Newton's method, which yields the $\lambda=0.5$ solution
 - `initialParams = initialParamsFor025;` avoids the $\lambda=0.5$ solution and therefore gives the next $\lambda=0.25$
 - ...
+
+### Boussinesq equations
+This is not finished. Feel free to try `fourierODEsingularInversion.m` and use it as a starting point.
