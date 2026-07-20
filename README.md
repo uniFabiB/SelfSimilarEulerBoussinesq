@@ -22,6 +22,7 @@ $$
 $$
     \nabla \cdot U = 0
 $$
+
 or the vorticity formulation
 
 $$
