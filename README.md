@@ -61,6 +61,7 @@ $$
     -\lambda U + ((1+\lambda) y + U) U_y = 0,
 \end{aligned}
 $$
+
 which has a smooth solution for $\lambda = \frac{1}{2n}$ (see supplementary material of Wang, Lai, Gómez-Serrano, Buckmaster 2023 ([Journal](https://doi.org/10.1103/PhysRevLett.130.244002), [arXiv](https://arxiv.org/abs/2201.06780)))
 
 # Usage
