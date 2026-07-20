@@ -27,18 +27,21 @@ or the vorticity formulation
 
 $$
     \omega + \big((\lambda+1) y + U\big)\cdot \nabla \omega = \Phi
-
-    (2 + \partial_1 U_1) \Phi + \left[(\lambda+1) y + U\right]\cdot \nabla \Phi = -\partial_1 U_2 \Psi
-
-    (2+ \partial_2 U_2 ) \Psi + \left[(\lambda+1) y + U\right]\cdot \nabla \Psi = - \partial_2 U_1 \Phi
-
-    \nabla \cdot U = 0
 $$
 
+$$
+    (2 + \partial_1 U_1) \Phi + \left[(\lambda+1) y + U\right]\cdot \nabla \Phi = -\partial_1 U_2 \Psi
+$$
+
+$$
+    (2+ \partial_2 U_2 ) \Psi + \left[(\lambda+1) y + U\right]\cdot \nabla \Psi = - \partial_2 U_1 \Phi
+$$
+
+$$
+    \nabla \cdot U = 0
+$$
 where $\Phi(y)=\partial_{y_1}\rho(y)$, $\Psi(y)=\partial_{y_2} \rho(y)$, and $\omega =\nabla^\perp_y \cdot U$
-
 and for Burgers' equation one gets
-
 $$
 \begin{aligned}
     -\lambda U + ((1+\lambda) y + U) U_y = 0
