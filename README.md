@@ -5,7 +5,9 @@ As a proof of concept, the 1d Burgers' equation is solved with an implementation
 
 For more mathematical background see Wang, Lai, G\'omez-Serrano, Buckmaster 2023 ([Journal](https://doi.org/10.1103/PhysRevLett.130.244002), [arXiv](https://arxiv.org/abs/2201.06780))
 
-The idea behind self-similar blow-up is to look for solutions of the form $u(x, t) = (1 - t)^\lambda  U\left(\frac{x}{(1 - t)^{lambda+1}} \right)=(1-t)^\lambda U(y)$. For the Boussinesq equations one gets velocity formulation
+The idea behind self-similar blow-up is to look for solutions of the form $$u(x, t) = (1 - t)^\lambda  U\left(\frac{x}{(1 - t)^{\lambda+1}} \right)=(1-t)^\lambda U(y).$$
+
+For the Boussinesq equations one gets velocity formulation
 $$
 \begin{aligned}
     -\lambda U + \big((\lambda+1) y + U\big)\cdot \nabla U + \nabla P &= \rho e_2
